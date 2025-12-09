@@ -1,6 +1,7 @@
 # Python to Stata workflow utilities
 
-installation
+installation (requires git to be installed)
+
 ```bash
 pip install git+https://github.com/paul-konietschke/stata-utils.git
 ```
