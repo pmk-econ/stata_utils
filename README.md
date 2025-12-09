@@ -14,8 +14,12 @@ from stata-utils import clean_stata
 ```
 
 Python function that solves two known issues when using pandas.to_stata()
-  0. Replaces all potential NA placeholders with uniform pd.nan
-  1. Object columns prevent wrting df to Stata: Usually numeric columns that contain pd.NA instead of pd.nan which is not accepted as numerical column by stata writer
-    - attempts conversion to numerical pandas column with pd.nan
-    - if it fails, reverts to brute force string column conversion which can later be destrung within stata
-  2. Ensures int64 type for numerical columns instead of other column types that contain few nas because of internal boolean masking that generates .z_ type of NAs. 
+
+0. Replaces all potential NA placeholders with uniform `pd.nan`.
+
+1. Object columns prevent writing DataFrames to Stata (Stata cannot handle `pd.NA` in numeric columns).  
+   To fix:
+   - Attempts conversion to numeric pandas columns using `pd.nan`.
+   - If conversion fails, reverts to brute-force string conversion (which can later be `destring`ed in Stata).
+
+2. Ensures `int64` dtype for numeric columns. This avoids mixed dtypes created by boolean masking, which can introduce Stata `.z_`-type missing values.
