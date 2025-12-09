@@ -6,8 +6,14 @@ installation (requires git to be installed)
 pip install git+https://github.com/pmk-econ/stata_utils/
 ```
 
+
 ## clean_stata
-Python function that solves two knows issues when using pandas.to_stata()
+
+```python 
+from stata-utils import clean_stata
+```
+
+Python function that solves two known issues when using pandas.to_stata()
   0. Replaces all potential NA placeholders with uniform pd.nan
   1. Object columns prevent wrting df to Stata: Usually numeric columns that contain pd.NA instead of pd.nan which is not accepted as numerical column by stata writer
     - attempts conversion to numerical pandas column with pd.nan
