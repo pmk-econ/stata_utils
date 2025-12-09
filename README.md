@@ -2,7 +2,7 @@
 
 installation
 ```bash
-pip install -e git+https://github.com/paul-konietschke/stata-utils.git#egg=stata-utils
+pip install git+https://github.com/paul-konietschke/stata-utils.git
 ```
 
 ## clean_stata
