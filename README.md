@@ -10,7 +10,7 @@ pip install git+https://github.com/pmk-econ/stata_utils/
 ## clean_stata
 
 ```python 
-from stata-utils import clean_stata
+import clean_stata
 ```
 
 Python function that solves two known issues when using pandas.to_stata()
