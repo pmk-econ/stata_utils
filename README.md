@@ -3,7 +3,7 @@
 installation (requires git to be installed)
 
 ```bash
-pip install git+https://github.com/paul-konietschke/stata-utils.git
+pip install git+https://github.com/pmk-econ/stata_utils/
 ```
 
 ## clean_stata
